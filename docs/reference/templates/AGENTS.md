@@ -1,10 +1,3 @@
----
-title: "AGENTS.md Template"
-summary: "Workspace template for AGENTS.md"
-read_when:
-  - Bootstrapping a workspace manually
----
-
 # AGENTS.md - Your Workspace
 
 This folder is home. Treat it that way.
@@ -132,7 +125,10 @@ Skills provide your tools. When you need one, check its `SKILL.md`. Keep local n
 - **Discord links:** Wrap multiple links in `<>` to suppress embeds: `<https://example.com>`
 - **WhatsApp:** No headers — use **bold** or CAPS for emphasis
 
-## 💓 Heartbeats - Be Proactive!
+## 🤖 行動守則 (Operational Rules)
+
+- **指令確認**：收到 Chen 的任何指令，必須第一時間回覆「收到」或「已收到」，明確告知我已進入處理狀態。
+- **處理透明**：若任務涉及複雜運算或長時間處理，需不時更新進度，避免 Chen 認為我進入休眠。
 
 When you receive a heartbeat poll (message matches the configured heartbeat prompt), don't just reply `HEARTBEAT_OK` every time. Use heartbeats productively!
 
@@ -214,6 +210,54 @@ Think of it like a human reviewing their journal and updating their mental model
 
 The goal: Be helpful without being annoying. Check in a few times a day, do useful background work, but respect quiet time.
 
-## Make It Yours
+## IWA 前端開發規範 (iwa-web-prompt)
 
-This is a starting point. Add your own conventions, style, and rules as you figure out what works.
+專案的完整編碼規範、Agent 定義、指令和技能已掛載於 `iwa-web-prompt/`。
+執行前端開發任務時，請先閱讀對應的規範檔案。
+
+### 目錄結構
+
+| 目錄                                   | 內容                                                                                  | 使用時機               |
+| -------------------------------------- | ------------------------------------------------------------------------------------- | ---------------------- |
+| `iwa-web-prompt/project/agents/`       | Agent 角色定義（frontend, layout, spec, bugfix, service, analysis）                   | 了解角色分工與工作流程 |
+| `iwa-web-prompt/project/instructions/` | 編碼標準（Angular, TypeScript, SCSS, Component, HTML, Test 等）                       | 寫程式碼前必讀         |
+| `iwa-web-prompt/project/prompts/`      | 任務提示模板（API 開發、規格分析、HTTP Proxy 等）                                     | 執行特定開發任務時參考 |
+| `iwa-web-prompt/project/rules/`        | 詳細規則（code-review, folder-system, git, global, state-management, test, workflow） | 需要深入了解規範時     |
+| `iwa-web-prompt/project/skills/`       | Application 專案技能（已透過 extraDirs 自動載入）                                     | 自動可用               |
+| `iwa-web-prompt/library/`              | Library 專案規範（agents, instructions, rules, skills）                               | 開發共用元件庫時參考   |
+
+### 任務對應指引
+
+- **切版任務（Layout）**: 先讀 `iwa-web-prompt/project/agents/frontend.agent.md` 或 `layout_general.agent.md`
+- **寫程式碼前**: 先讀 `iwa-web-prompt/project/instructions/global_*.instructions.md`
+- **API 開發**: 先讀 `iwa-web-prompt/project/agents/service.agent.md` + `iwa-web-prompt/project/prompts/api-core_service.prompt.md`
+- **Code Review**: 先讀 `iwa-web-prompt/project/instructions/code-review_report.instructions.md` + `iwa-web-prompt/project/rules/code-review/`
+- **Bug 修復**: 先讀 `iwa-web-prompt/project/agents/bugfix.agent.md`
+- **規格分析**: 先讀 `iwa-web-prompt/project/agents/spec.agent.md` + `iwa-web-prompt/project/agents/analysis.agent.md`
+- **元件庫開發**: 先讀 `iwa-web-prompt/library/` 下的對應檔案
+
+## IWA 前端開發規範 (iwa-web-prompt)
+
+專案的完整編碼規範、Agent 定義、指令和技能已掛載於 `iwa-web-prompt/`。
+執行前端開發任務時，請先閱讀對應的規範檔案。
+
+### 目錄結構
+
+| 目錄                                   | 內容                                                                                  | 使用時機               |
+| -------------------------------------- | ------------------------------------------------------------------------------------- | ---------------------- |
+| `iwa-web-prompt/project/agents/`       | Agent 角色定義（frontend, layout, spec, bugfix, service, analysis）                   | 了解角色分工與工作流程 |
+| `iwa-web-prompt/project/instructions/` | 編碼標準（Angular, TypeScript, SCSS, Component, HTML, Test 等）                       | 寫程式碼前必讀         |
+| `iwa-web-prompt/project/prompts/`      | 任務提示模板（API 開發、規格分析、HTTP Proxy 等）                                     | 執行特定開發任務時參考 |
+| `iwa-web-prompt/project/rules/`        | 詳細規則（code-review, folder-system, git, global, state-management, test, workflow） | 需要深入了解規範時     |
+| `iwa-web-prompt/project/skills/`       | Application 專案技能（已透過 extraDirs 自動載入）                                     | 自動可用               |
+| `iwa-web-prompt/library/`              | Library 專案規範（agents, instructions, rules, skills）                               | 開發共用元件庫時參考   |
+
+### 任務對應指引
+
+- **切版任務（Layout）**: 先讀 `iwa-web-prompt/project/agents/frontend.agent.md` 或 `layout_general.agent.md`
+- **寫程式碼前**: 先讀 `iwa-web-prompt/project/instructions/global_*.instructions.md`
+- **API 開發**: 先讀 `iwa-web-prompt/project/agents/service.agent.md` + `iwa-web-prompt/project/prompts/api-core_service.prompt.md`
+- **Code Review**: 先讀 `iwa-web-prompt/project/instructions/code-review_report.instructions.md` + `iwa-web-prompt/project/rules/code-review/`
+- **Bug 修復**: 先讀 `iwa-web-prompt/project/agents/bugfix.agent.md`
+- **規格分析**: 先讀 `iwa-web-prompt/project/agents/spec.agent.md` + `iwa-web-prompt/project/agents/analysis.agent.md`
+- **元件庫開發**: 先讀 `iwa-web-prompt/library/` 下的對應檔案
